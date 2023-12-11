@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "ratcam"
+version = "0.1.0"
+description = ""
+authors = ["magnus <magnus.maynard@rovco.com>"]
+readme = "README.md"
+packages = [{include = "ratcam"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+click = "^8.1.7"
+tqdm = "^4.66.1"
+opencv-contrib-python = "^4.8.1.78"
+picamera2 = "^0.3.16"
+
+[tool.poetry.scripts]
+ratcam = "ratcam.ratcam:cli"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
