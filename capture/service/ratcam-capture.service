@@ -1,0 +1,12 @@
+[Unit]
+Description=RatCam Capture Service - Automatically starts aquiring images on boot
+After=network.target
+
+[Service]
+Type=simple
+User=user
+ExecStart=/home/user/.local/bin/ratcam-capture -o /media/data
+
+[Install]
+WantedBy=default.target
+RequiredBy=network.target

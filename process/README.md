@@ -3,9 +3,12 @@ This could be done on the Nano, but it is recommended to run on seperate desktop
 
 ## Setup
 1. Clone this repo.
-2. Install poetry package:
+2. Install and build poetry package:
     ```
+    cd ratcam/capture
     poetry install
+    poetry build
+    pip3 install --editable .
     ```
 ## Run
 poetry run ratcam process -v "/home/magnus/github/ratcam/data/traffic.m4v"

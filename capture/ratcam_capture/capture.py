@@ -1,4 +1,4 @@
-import gi 
+import gi
 import sys
 import os
 import datetime
@@ -18,7 +18,7 @@ def bus_call(bus, message, loop):
     return True
 
 
-def capture_video(output_dir: str) -> None:
+def capture(output_dir: str) -> None:
   GObject.threads_init()
   Gst.init(None)
 
@@ -38,14 +38,14 @@ def capture_video(output_dir: str) -> None:
     videorate ! video/x-raw,width=2304,height=1296,framerate={fps}/1 ! \
     clockoverlay halignment=right valignment=bottom shaded-background=true time-format='%D %H:%M:%S' ! \
     x264enc ! splitmuxsink location={output_dir}/video%02d.mp4 max-size-time={int(timesplit_10s)}"
-  
-  pipeline = Gst.parse_launch(pipeline_str) 
-  bus = pipeline.get_bus()     
+
+  pipeline = Gst.parse_launch(pipeline_str)
+  bus = pipeline.get_bus()
 
   loop = GObject.MainLoop()
   bus.add_signal_watch()
   bus.connect ("message", bus_call, loop)
-    
+
   pipeline.set_state(Gst.State.PLAYING)
   try:
     loop.run()

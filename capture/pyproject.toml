@@ -13,7 +13,7 @@ PyGObject = "3.42.2"
 [tool.poetry.dev-dependencies]
 
 [tool.poetry.scripts]
-ratcam-capture = "ratcam_capture.run:capture"
+ratcam-capture = "ratcam_capture:main"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

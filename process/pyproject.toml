@@ -13,7 +13,7 @@ tqdm = "^4.66.1"
 opencv-contrib-python = "^4.8.1.78"
 
 [tool.poetry.scripts]
-ratcam-process = "ratcam-process.ratcam-process:cli"
+ratcam-process = "ratcam_process:main"
 
 [build-system]
 requires = ["poetry-core"]
