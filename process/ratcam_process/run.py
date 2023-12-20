@@ -1,35 +1,9 @@
 import click
 from ratcam.process import process_video
-from ratcam.capture import capture_video
 from typing import Union
 import os
 
-
-@click.group()
-def cli():
-    """A simple program for tracking the paths of pesky rodents in my attic, so that the entry points can be blocked."""
-    pass
-
-
-@click.command(help="Capture a video from RPI an camera and save to disk")
-@click.option("--output-directory", "-o", required=True, type=str, help="Path to output directory where videos are saved")
-@click.option(
-    "--split",
-    "-v",
-    required=False,
-    type=int,
-    show_default=True,
-    default=86400,
-    help="Seconds between each video file split, default is a new file every 24h.",
-)
-def capture(output_directory: str, split: int) -> bool:
-    if capture_video(directory=output_directory, split_s=split):
-        exit(os.EX_OK)
-    else:
-        exit(os.EX_IOERR)
-
-
-@click.command(help="Process a capture video file")
+@click.command(help="Process a captured video file")
 @click.option("--video-path", "-v", required=True, type=str, help="Path to video file")
 @click.option(
     "--interval",

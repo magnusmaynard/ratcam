@@ -1,20 +1,19 @@
 [tool.poetry]
-name = "ratcam"
+name = "ratcam-process"
 version = "0.1.0"
-description = ""
-authors = ["magnus <magnus.maynard@rovco.com>"]
+description = "Tool for processing footage aquired by ratcam-capture"
+authors = ["magnus <magnus.maynard@hotmail.com>"]
 readme = "README.md"
-packages = [{include = "ratcam"}]
+packages = [{include = "ratcam-process"}]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.8"
 click = "^8.1.7"
 tqdm = "^4.66.1"
 opencv-contrib-python = "^4.8.1.78"
-picamera2 = "^0.3.16"
 
 [tool.poetry.scripts]
-ratcam = "ratcam.ratcam:cli"
+ratcam-process = "ratcam-process.ratcam-process:cli"
 
 [build-system]
 requires = ["poetry-core"]
