@@ -1,5 +1,5 @@
 import click
-from ratcam.process import process_video
+from ratcam_process.process import process_video
 from typing import Union
 import os
 

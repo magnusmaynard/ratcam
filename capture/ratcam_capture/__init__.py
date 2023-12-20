@@ -1,6 +1,5 @@
 import click
 from ratcam_capture.capture import capture
-from typing import Union
 import os
 
 @click.command(help="Capture a video from RPI an camera and save to disk")

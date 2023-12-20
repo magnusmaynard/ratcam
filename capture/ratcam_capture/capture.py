@@ -30,7 +30,7 @@ def capture(output_dir: str, split_s: int, flip_mode: int, fps: int) -> None:
     videorate ! video/x-raw,width=2304,height=1296,framerate={fps}/1 ! \
     clockoverlay halignment=right valignment=bottom shaded-background=true time-format='%D %H:%M:%S' ! \
     x264enc ! \
-    splitmuxsink location={output_dir}/video%04d.mp4 max-size-time={int(split_s*1e+9)} async-handling=1 send-keyframe-requests=1"
+    splitmuxsink location={output_dir}/video_%03d.mp4 max-size-time={int(split_s*1e+9)} async-handling=1 send-keyframe-requests=1"
 
   pipeline = Gst.parse_launch(pipeline_str)
   bus = pipeline.get_bus()
