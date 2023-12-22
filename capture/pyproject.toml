@@ -3,6 +3,7 @@ name = "ratcam-capture"
 version = "0.1.0"
 description = "Tool for capturing videos of rats on the Jetson Nano"
 authors = ["magnus <magnus.maynard@hotmail.com>"]
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.6"

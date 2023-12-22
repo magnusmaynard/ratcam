@@ -1,69 +1,65 @@
 import click
-from ratcam_process.process import process_video
+from ratcam_process.process import process
 from typing import Union
 import os
 
+
 @click.command(help="Process a captured video file")
-@click.option("--video-path", "-v", required=True, type=str, help="Path to video file")
+@click.option(
+    "--directory",
+    "-d",
+    required=True,
+    type=str,
+    help="Path to directory containing .mp4 video files",
+)
 @click.option(
     "--interval",
     "-i",
     required=False,
     type=float,
     show_default=True,
-    default=1.0,
-    help="Interval in seconds between every processed frames",
+    default=0.0,
+    help="Interval in seconds between every processed frames, 0 processes every frame",
 )
 @click.option(
-    "--start",
+    "--sensitivity",
     "-s",
     required=False,
     type=float,
     show_default=True,
-    default=0,
-    help="Time in seconds to processing from",
-)
-@click.option(
-    "--duration",
-    "-d",
-    required=False,
-    type=float,
-    show_default=True,
-    default=None,
-    help="Time in seconds to process for",
-)
-@click.option(
-    "--sensitivity",
-    "-f",
-    required=False,
-    type=float,
-    show_default=True,
     default=0.01,
-    help="The amount the background changes are added to output image",
+    help="The amount background changes affect the final output image",
 )
 @click.option(
-    "--show",
+    "--show-preview",
     required=False,
     is_flag=True,
     show_default=True,
     default=False,
     help="Show preview of processed frames",
 )
+@click.option(
+    "--output",
+    "-o",
+    required=False,
+    type=str,
+    show_default=True,
+    default="output.jpg",
+    help="Path to save resulting output image",
+)
 def main(
-    video_path: str,
+    directory: str,
     interval: float,
-    start: float,
-    duration: Union[float, None],
     sensitivity: float,
-    show: bool,
+    show_preview: bool,
+    output: str,
 ) -> bool:
-    if process_video(
-        video_path=video_path,
+    if process(
+        dir_path=directory,
         interval_s=interval,
-        start_s=start,
-        duration_s=duration,
         sensitivity=sensitivity,
-        show=show,
+        preview=show_preview,
+        output_path=output,
     ):
         exit(os.EX_OK)
     else:

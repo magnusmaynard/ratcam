@@ -1,6 +1,16 @@
 # RatCam - Capture
 This is package used for capturing images of rats on the Jetson Nanoe, which can be later processed by ratcam-process.
 
+## Hardware List
+- Jetson Nano
+- Raspberry Pi NoIR Camera v3 (IMX708)
+- IR illuminator
+- SD card (XXGB)
+- USB 3.1 Memory Stick (64GB)
+- Gorrila camera stand
+- Arducam RPI camera case
+- CSI ribbon cable extension.
+
 ## Prerequisites
 1. Connect camera into CAM0 CSI slot on the Jetson. (Ensure the metal connectors on ribbon cable are facing the heatsink).
 2. Install latest [JetPack 4.6.4 3](https://developer.nvidia.com/jetpack-sdk-464) (L4T 2.7.4) as per usual.
@@ -50,6 +60,8 @@ Fortunately RidgeRun provides the drivers for the IMX708 sensor. Their free driv
 For more details, follow the instructions on [ridgerun.com](https://developer.ridgerun.com/wiki/index.php/Raspberry_Pi_Camera_Module_3_IMX708_Linux_driver_for_Jetson#Installing_the_Driver_-_Option_A:_Debian_Packages_(Recommended))
 
 ## Install Package
+Install the poetry package for the capture program.
+
 1. Clone the repo:
     ```
     mkdir -p ~/github
@@ -71,7 +83,9 @@ For more details, follow the instructions on [ridgerun.com](https://developer.ri
     ```
 
 ## Install Service
-1. Create service to start on boot:
+Start video capture automatically on boot of the Jetson Nano.
+
+1. Create symlink to service in repo:
     ```
     sudo ln -s ~/github/ratcam/capture/service/ratcam-capture.service /etc/systemd/system/.
     ```
@@ -85,6 +99,8 @@ For more details, follow the instructions on [ridgerun.com](https://developer.ri
     ```
 
 ## Manual Run
+Sometimes it is useful to manually run the capture program, for example to debug issues.
+
 1. Ensure service is not running:
     ```
     sudo systemctl stop ratcam-capture.service

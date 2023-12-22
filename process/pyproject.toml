@@ -1,10 +1,9 @@
 [tool.poetry]
 name = "ratcam-process"
 version = "0.1.0"
-description = "Tool for processing footage aquired by ratcam-capture"
+description = "Tool for processing footage acquired by ratcam-capture"
 authors = ["magnus <magnus.maynard@hotmail.com>"]
 readme = "README.md"
-packages = [{include = "ratcam-process"}]
 
 [tool.poetry.dependencies]
 python = "^3.8"
