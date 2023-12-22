@@ -1,5 +1,5 @@
 # Capture :movie_camera:
-For acquiring videos of rats from the camera, to be run on the Jetson Nano. These video can then be processed later.
+Package for acquiring videos of rats from the camera, to be run on the Jetson Nano. These video can then be processed later.
 
 ## Hardware List
 - Jetson Nano

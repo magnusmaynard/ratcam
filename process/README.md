@@ -1,5 +1,5 @@
 # Process :gear:
-For analysing these video of rats, to be run on a desktop computer as a post-processing step.
+Package for analysing videos of rats, to be run on a desktop computer as a post-processing step.
 
 Processing could be done on the Jetson Nano, but it is recommended to run on separate desktop machine for performance.
 
