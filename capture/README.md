@@ -12,6 +12,8 @@ Other hardware configurations will work, this is the setup I used:
 - Arducam RPI camera case
 - CSI ribbon cable extension.
 
+![Hardware setup](../docs/hardware_setup.jpg)
+
 ## Prerequisites
 1. Connect camera into CAM0 CSI slot on the Jetson. (Ensure the metal connectors on ribbon cable are facing the heatsink).
 2. Install latest [JetPack 4.6.4 3](https://developer.nvidia.com/jetpack-sdk-464) (L4T 2.7.4) as per usual.
