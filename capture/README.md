@@ -1,5 +1,5 @@
 # Capture :movie_camera:
-This is package used for capturing images of rats on the Jetson Nanoe, which can be later processed by ratcam-process.
+For acquiring videos of rats from the camera, to be run on the Jetson Nano. These video can then be processed later.
 
 ## Hardware List
 - Jetson Nano
