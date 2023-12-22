@@ -79,6 +79,7 @@ def process(
     interval_s: float,
     sensitivity: float,
     preview: bool,
+    extension: str,
     output_path: str):
 
     if  not os.path.isdir(dir_path):
@@ -87,7 +88,7 @@ def process(
 
     print(f"Processing directory: {dir_path}")
 
-    video_paths = [os.path.join(dir_path, filename) for filename in sorted(os.listdir(dir_path)) if filename.endswith(".mp4")]
+    video_paths = [os.path.join(dir_path, filename) for filename in sorted(os.listdir(dir_path)) if filename.endswith(extension)]
     output_image = None
 
     with tqdm(total=len(video_paths)) as pbar:

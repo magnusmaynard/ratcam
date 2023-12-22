@@ -10,7 +10,7 @@ import os
     "-d",
     required=True,
     type=str,
-    help="Path to directory containing .mp4 video files",
+    help="Path to directory containing video files",
 )
 @click.option(
     "--interval",
@@ -32,11 +32,20 @@ import os
 )
 @click.option(
     "--show-preview",
+    "-p",
     required=False,
     is_flag=True,
     show_default=True,
     default=False,
     help="Show preview of processed frames",
+)
+@click.option(
+    "--extension",
+    "-e",
+    show_default=True,
+    default=".mp4",
+    type=str,
+    help="Extension of video files to process",
 )
 @click.option(
     "--output",
@@ -52,6 +61,7 @@ def main(
     interval: float,
     sensitivity: float,
     show_preview: bool,
+    extension: str,
     output: str,
 ) -> bool:
     if process(
@@ -59,6 +69,7 @@ def main(
         interval_s=interval,
         sensitivity=sensitivity,
         preview=show_preview,
+        extension=extension,
         output_path=output,
     ):
         exit(os.EX_OK)

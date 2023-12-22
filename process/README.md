@@ -1,4 +1,4 @@
-# Rat Cam - Process
+# Process :gear:
 Processing could be done on the Jetson Nano, but it is recommended to run on separate desktop machine for performance. This is done after videos have been captured as a post processing step.
 
 Simple frame differencing is done as the post processing step, using OpenCV's [BackgroundSubtractorMOG](https://docs.opencv.org/3.4/d6/da7/classcv_1_1bgsegm_1_1BackgroundSubtractorMOG.html), to visualise the paths of the rats. Realtime motion or object detection could have been used instead, however the current approach is sufficient.
