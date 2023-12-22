@@ -1,8 +1,8 @@
 # Capture :movie_camera:
-Package for acquiring videos of rats from the camera, to be run on the Jetson Nano. These video can then be processed later.
+Package for acquiring videos of rats from the camera, to be run on the Jetson Nano. These videos can then be processed later.
 
 ## Hardware List
-Other hardware configurations will work, this is the setup I used:
+Other hardware configurations will work, but this is the exact configuration setup I used:
 - Jetson Nano
 - Raspberry Pi NoIR Camera v3 (IMX708)
 - IR illuminator
@@ -10,7 +10,7 @@ Other hardware configurations will work, this is the setup I used:
 - USB 3.1 Memory Stick (64GB)
 - Gorilla camera stand
 - Arducam RPI camera case
-- CSI ribbon cable extension.
+- CSI ribbon cable extension
 
 ![Hardware setup](../docs/hardware_setup.jpg)
 
@@ -21,10 +21,10 @@ Other hardware configurations will work, this is the setup I used:
 4. Ensure ext4 formated USB or storage is connected into the Jetson. Ideally above 64GB to store enough footage.
 5. Ensure USB storage is automatically mounted to a location on boot.
 
-    Tip, add line `UUID=<insert UUID of drive> /media/data auto nosuid,nodev,nofail 0 0` to `/etc/fstab`
+    > Tip, add line `UUID=<insert UUID of drive> /media/data auto nosuid,nodev,nofail 0 0` to `/etc/fstab`
 
 ## Install Camera Drivers
-At the time of write, the v3 camera (with the Sony X708 sensor) is not supported on the official L4T drivers. The default CSI sensor is IMX219. It is possible to use IMX477 using [Jetson-IO](https://docs.nvidia.com/jetson/archives/l4t-archived/l4t-3273/index.html#page/Tegra%20Linux%20Driver%20Package%20Development%20Guide/hw_setup_jetson_io.html#wwpID0E02D0HA).
+At the time of writing, the v3 camera (with the Sony X708 sensor) is not supported on the official L4T drivers. The default CSI sensor is IMX219. It is possible to use IMX477 using [Jetson-IO](https://docs.nvidia.com/jetson/archives/l4t-archived/l4t-3273/index.html#page/Tegra%20Linux%20Driver%20Package%20Development%20Guide/hw_setup_jetson_io.html#wwpID0E02D0HA).
 
 Plugging in the CSI connector and rebooting reports `board setup failed` error in dmesg.
 
@@ -63,7 +63,7 @@ Fortunately RidgeRun provides the drivers for the IMX708 sensor. Their free driv
 For more details, follow the instructions on [ridgerun.com](https://developer.ridgerun.com/wiki/index.php/Raspberry_Pi_Camera_Module_3_IMX708_Linux_driver_for_Jetson#Installing_the_Driver_-_Option_A:_Debian_Packages_(Recommended))
 
 ## Install Package
-Install the poetry package for the capture program.
+Install the poetry package for the capture program:
 
 1. Clone the repo:
     ```
@@ -86,7 +86,7 @@ Install the poetry package for the capture program.
     ```
 
 ## Install Service
-Start video capture automatically on boot of the Jetson Nano.
+Start video capture automatically on boot of the Jetson Nano:
 
 1. Create symlink to service in repo:
     ```
@@ -102,7 +102,7 @@ Start video capture automatically on boot of the Jetson Nano.
     ```
 
 ## Manual Run
-Sometimes it is useful to manually run the capture program, for example to debug issues.
+Sometimes it is useful to manually run the capture program, for example to debug issues:
 
 1. Ensure service is not running:
     ```
