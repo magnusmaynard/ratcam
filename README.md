@@ -2,7 +2,7 @@
 ## Introduction
 A simple method for tracking the paths of pesky rodents in my attic, so that the entry points can be blocked!
 
-This is not a serious project, it was built for fun and a very specific need of mine. Feel free to repurpose it for other use-cases.
+This is not a serious project, it was built for a very specific need of mine as a last resort. Feel free to repurpose it for any other use-cases.
 
 ![Example output image](./docs/example_output.jpg)
 
