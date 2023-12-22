@@ -2,12 +2,13 @@
 Package for acquiring videos of rats from the camera, to be run on the Jetson Nano. These video can then be processed later.
 
 ## Hardware List
+Other hardware configurations will work, this is the setup I used:
 - Jetson Nano
 - Raspberry Pi NoIR Camera v3 (IMX708)
 - IR illuminator
-- SD card (XXGB)
+- SD card (64GB)
 - USB 3.1 Memory Stick (64GB)
-- Gorrila camera stand
+- Gorilla camera stand
 - Arducam RPI camera case
 - CSI ribbon cable extension.
 
@@ -34,7 +35,7 @@ Fortunately RidgeRun provides the drivers for the IMX708 sensor. Their free driv
     ```
     sudo dpkg -i --force-overwrite ./nano.deb
     ```
-3. Enable the device tree changes, by editting `/boot/extlinux/extlinux.conf` file and set contents to:
+3. Enable the device tree changes, by editing `/boot/extlinux/extlinux.conf` file and set contents to:
     ```
     TIMEOUT 30
     DEFAULT Develop
